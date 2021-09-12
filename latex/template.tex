@@ -1,0 +1,38 @@
+\documentclass[a4paper,12pt]{article}
+
+\input{\string~/preamble}
+
+\AddToShipoutPictureFG{
+    \AtPageUpperLeft{
+        \raisebox{-\height-5pt}{
+            \begin{tabular}{ | l | }
+                \hline
+                Задачи\\ \hline
+                \declprob{1}{1}\\
+                \declprob{2}{2}\\
+                \hline
+            \end{tabular}
+        }
+    }
+}
+
+\author{Андрей Одинцов}
+\title{ДЗ по алгебре}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{problem}[1] Тут условие
+\begin{solution} Тут решение
+\end{solution}
+\end{problem}
+
+
+\begin{problem}[2] Тут условие
+\begin{solution} Тут решение
+\end{solution}
+\end{problem}
+
+\end{document}
+

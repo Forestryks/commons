@@ -1,0 +1,264 @@
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage[unicode=true]{hyperref}
+\usepackage{yfonts}
+\usepackage{bbm}
+\usepackage{blkarray}
+\frenchspacing
+
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\succeq}{\ensuremath{\succcurlyeq}}
+\renewcommand{\preceq}{\ensuremath{\preccurlyeq}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\kappa}{\ensuremath{\varkappa}}
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\a}{\ensuremath{\alpha}}
+\renewcommand{\b}{\ensuremath{\beta}}
+\renewcommand{\d}{\ensuremath{\delta}}
+\newcommand{\D}{\ensuremath{\Delta}}
+\newcommand{\g}{\ensuremath{\gamma}}
+\renewcommand{\l}{\ensuremath{\lambda}}
+\newcommand{\p}{\ensuremath{\phi}}
+\newcommand{\s}{\ensuremath{\sigma}}
+\newcommand{\eps}{\ensuremath{\epsilon}}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\renewcommand{\C}{\ensuremath{\mathds{C}}}
+\renewcommand{\O}{\ensuremath{\mathds{O}}}
+\newcommand{\con}{\wedge}
+\newcommand{\dis}{\vee}
+\newcommand{\impl}{\to}
+\newcommand{\mb}[1]{\mathbbm{#1}}
+\newcommand{\false}{\text{Л}}
+\newcommand{\true}{\text{И}}
+\newcommand{\id}{\text{id}}
+\newcommand{\ma}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\mne}{M^0}
+
+\DeclareRobustCommand{\divby}{%
+  \mathrel{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}%
+}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{icomma}
+
+\mathtoolsset{showonlyrefs=true}
+
+\usepackage{euscript}
+\usepackage{mathrsfs}
+
+\let\ker\relax
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+\DeclareMathOperator{\re}{\mathop{Re}}
+\DeclareMathOperator{\im}{\mathop{Im}}
+\DeclareMathOperator{\rk}{\mathop{rk}}
+\DeclareMathOperator{\ker}{\mathop{Ker}}
+\DeclareMathOperator{\ord}{\mathop{ord}}
+\DeclareMathOperator{\lcm}{\mathop{lcm}}
+\DeclareMathOperator{\spec}{\mathop{Spec}}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\setlength\fboxsep{3pt}
+\setlength\fboxrule{1pt}
+\usepackage{wrapfig}
+
+\usepackage{array,tabularx,tabulary,booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{dsfont}
+\usepackage{enumitem}
+\usepackage{eso-pic}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\makeatletter
+\newcommand{\declprob}[2]{%
+    \hyperlink{#1}{#2}%
+    \protected@write\@mainaux{}{%
+        \string\expandafter\string\gdef
+            \string\csname\string\detokenize{#1}\string\endcsname{#2}%
+    }
+}
+\newcommand{\useprob}[1]{%
+    \hypertarget{#1}{\csname #1\endcsname}%
+}
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{proposition}[theorem]{Утверждение}
+\newtheorem{suggestion}{Предложение}
+
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{definition}{Определение}[section]
+
+\newtheoremstyle{solution}
+    {\dimexpr\topsep/2\relax} % space above
+    {\dimexpr\topsep/2\relax} % space below
+    {}          % body font
+    {}          % indent amount
+    {\itshape} % theorem head font
+    {.}         % punctuation after theorem head
+    {.5em}      % space after theorem head
+    {#1}          % theorem hed spec. (empty = "normal")
+
+\theoremstyle{solution}
+\newtheorem{solution}{Решение}
+
+\theoremstyle{remark}
+\newtheorem*{note}{Замечание}
+
+%\newenvironment{hproblem}[1]{
+%\noindent\textbf{Задача #1.}%
+%}{\vspace{1cm}}
+
+\newtheoremstyle{problemstyle}
+        {3pt} % <space above>
+        {20pt} % <space below>
+        {\normalfont} % <body font>
+        {} % <indent amount>
+        {\bfseries} % <theorem head font>
+        {\normalfont\bfseries.} % <punctuation after theorem head>
+        {.5em} % <space after theorem head>
+        {#1 \useprob{#3}} % <theorem head spec (can be left empty, meaning `normal')>
+\theoremstyle{problemstyle}
+\newtheorem{problem}{Задача}
+\theoremstyle{plain}
+
+\newtheoremstyle{sproblemstyle}
+        {3pt} % <space above>
+        {20pt} % <space below>
+        {\normalfont} % <body font>
+        {} % <indent amount>
+        {\bfseries} % <theorem head font>
+        {\normalfont\bfseries.} % <punctuation after theorem head>
+        {.5em} % <space after theorem head>
+        {#1 #2} % <theorem head spec (can be left empty, meaning `normal')>
+\theoremstyle{sproblemstyle}
+\newtheorem{sproblem}{Задача}
+\theoremstyle{plain}
+
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+\usepackage{geometry} % Простой способ задавать поля
+\geometry{top=25mm}
+\geometry{bottom=35mm}
+\geometry{left=35mm}
+\geometry{right=20mm}
+
+\usepackage{lastpage}
+\usepackage{soul}
+
+\usepackage{csquotes}
+\usepackage{multicol}
+
+
+% \usepackage{tikz}
+% \usepackage{pgfplots}
+% \usepackage{pgfplotstable}
+% \usepackage{color}
+% \usepackage{pgf,tikz,pgfplots}
+% \pgfplotsset{compat=1.15}
+% \usepackage{mathrsfs}
+% \usetikzlibrary{arrows}
+
+\makeatletter
+\newcommand{\DeclareMathActive}[2]{%
+  % #1 is the character, #2 is the definition
+  \expandafter\edef\csname keep@#1@code\endcsname{\mathchar\the\mathcode`#1 }
+  \begingroup\lccode`~=`#1\relax
+  \lowercase{\endgroup\def~}{#2}%
+  \AtBeginDocument{\mathcode`#1="8000 }%
+}
+
+\newcommand{\std}[1]{\csname keep@#1@code\endcsname}
+\patchcmd{\newmcodes@}{\mathcode`\-\relax}{\std@minuscode\relax}{}{\ddt}
+\AtBeginDocument{\edef\std@minuscode{\the\mathcode`-}}
+\makeatother
+
+\DeclareMathActive{*}{\cdot}
+
+\makeatletter
+\newenvironment{sqcases}{%
+  \matrix@check\sqcases\env@sqcases
+}{%
+  \endarray\right.%
+}
+\def\env@sqcases{%
+  \let\@ifnextchar\new@ifnextchar
+  \left\lbrack
+  \def\arraystretch{1.2}%
+  \array{@{}l@{\quad}l@{}}%
+}
+\makeatother
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\mat}{Mat}
+\DeclareMathOperator{\elem}{\text{Э}}
+\DeclareMathOperator{\Carg}{Arg}
+\DeclareMathOperator{\carg}{arg}
+\DeclareMathOperator{\range}{Range}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\Hom}{Hom}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\makeatletter
+\newcommand{\WronglyDeclarePairedDelimiter}[3]{%
+  \expandafter\DeclarePairedDelimiter\csname RIGHT\string#1\endcsname{#2}{#3}%
+  \newcommand#1{%
+    \@ifstar{\csname RIGHT\string#1\endcsname}
+            {\@ifnextchar[{\csname RIGHT\string#1\endcsname}
+                          {\csname RIGHT\string#1\endcsname*}%
+            }%
+  }%
+}
+\makeatother
+
+\WronglyDeclarePairedDelimiter\br{(}{)}
+\WronglyDeclarePairedDelimiter\abs{\lvert}{\rvert}
+\WronglyDeclarePairedDelimiter\set{\{}{\}}
+\WronglyDeclarePairedDelimiter\ang{\langle}{\rangle}
+
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+
+\DeclareRobustCommand{\divby}{%
+  \mathrel{\text{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}}%
+}
+
+\usepackage{listings}% http://ctan.org/pkg/listings
+\lstset{
+  basicstyle=\ttfamily,
+  mathescape
+}
+
+\newcommand*\xor{\oplus}
+\newcommand*\iso{\xrightarrow{\sim}}
+\newcommand{\enum}[1]{\begin{enumerate}[noitemsep,topsep=0pt] #1 \end{enumerate}}
